@@ -44,7 +44,7 @@ const TransparentButton = styled(TouchableOpacity)`
   align-items: center;
 `;
 
-const Landing = () => {
+const Landing = ({ navigation }) => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
@@ -64,12 +64,13 @@ const Landing = () => {
           Buy, swap, and send crypto tokens.
         </Text>
         <ButtonContainer>
-          <StyledButton>
+          <StyledButton onPress={() => navigation.navigate('Home')}>
             <ButtonText>Get started with a new wallet</ButtonText>
           </StyledButton>
         </ButtonContainer>
         <TransparentButton>
           <ButtonText
+            onPress={() => navigation.navigate('Home')}
             style={{
               color: '#e8006f',
             }}>
